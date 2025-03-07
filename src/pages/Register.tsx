@@ -6,7 +6,7 @@ function Register() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/perfil/${username}");
+    navigate(`/perfil/${username}`);
     
   }
 
@@ -34,7 +34,7 @@ function Register() {
 
           <div className="flex flex-col w-100 bg-green-100 rounded-lg p-4">
             <h2 className="text-2xl font-bold text-center">Cadastrar</h2>
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <input type="text" placeholder="Nome" 
                 className="p-2 border-2 border-green-300 hover:border-green-400"
                 value={username}
