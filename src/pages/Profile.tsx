@@ -1,9 +1,10 @@
 import { use } from "react";
-import { Link,useParams} from "react-router-dom";
+import { Link,useLocation,useParams} from "react-router-dom";
 
 
 function Profile() {
-    const {username} = useParams();
+    const location = useLocation();
+    const {username,email,password} = location.state || {};
 
     return (
         <>
@@ -15,16 +16,11 @@ function Profile() {
                     e.currentTarget.style.background = bg;
                 }}>
                 <h1 className="text-2xl font-bold text-center"> Area do Usuario</h1>
-                <p className="text-center glitch" >Bem vindo {username}</p>
 
-                {/* <nav className="mt-4 p-2 justify-center flex gap-10">
-                
-                    <Link className="m4-4 text-purple-300 hover:text-purple-500" to="/">Inicio</Link>
-                    <Link className="m4-4 text-purple-300 hover:text-purple-500" to="/sobre">Sobre Nós</Link>
-                    <Link className="m4-4 text-purple-300 hover:text-purple-500" to="/cadastro">Se Cadastre-se</Link>
-                
-                </nav>     */}
-                <div className="flex flex-col gap-4 items-center">
+                <hr className="w-screen" />
+                <p className="test-1sm text-center text-black">Bem vindo, {username} Aqui você pode ver suas informações</p>
+                <p className="text-center text-black">Email: {email}</p>
+                <p className="text-center text-black">Senha: {password}</p>
 
                 <Link className="m4-4 text-purple-300 hover:text-purple-500" to="/">Voltar</Link>
                 </div>
@@ -32,7 +28,7 @@ function Profile() {
 
 
 
-            </div>
+
 
         </>
     )
