@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+✈️ VooTrack
+VooTrack é uma aplicação web desenvolvida com React + TypeScript + React Router DOM, que permite o cadastro de usuários, exibição de perfis, listagem de dados e navegação entre páginas. O layout é estilizado com Tailwind CSS e tem um efeito dinâmico de background radial baseado no movimento do mouse.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📁 Estrutura de Páginas
+Home.tsx
+Página de boas-vindas com fundo dinâmico.
+path: /
 
-Currently, two official plugins are available:
+About.tsx
+Página institucional com breve descrição pessoal.
+path: /sobre
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Register.tsx
+Formulário de cadastro com envio de dados para o perfil do usuário.
+path: /cadastro
 
-## Expanding the ESLint configuration
+Profile.tsx
+Exibe os dados do usuário passados por state via rota dinâmica.
+path: /perfil/:username
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Users.tsx
+Lista usuários buscados via uma função externa getUsuarios() (mock ou API).
+path: /usuarios
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🧠 Funcionalidades
+Lazy loading com React.lazy e Suspense
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Navegação com react-router-dom
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Cadastro de usuário com redirecionamento para /perfil/:username
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Listagem de usuários (consome dados de uma API ou função mockada)
+
+Estilização com Tailwind CSS
+
+Efeito de gradiente dinâmico com base na posição do cursor
+
+🚀 Para rodar o projeto
+bash
+Copiar
+Editar
+npm install
+npm run dev
+🔧 Tecnologias
+React
+
+TypeScript
+
+React Router DOM
+
+Tailwind CSS
